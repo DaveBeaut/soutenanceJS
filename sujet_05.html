@@ -91,34 +91,42 @@
 
 function computeSequence() {
     let arr = [];
-    let valBase = document.getElementById("start-number").value;
     let n = document.getElementById("start-number").value;
+    let valBase = n;
 
     if (n % 1 != 0 || n <= 0) {
         alert("Entrez un chiffre ou un nombre entier et positif supérieur à 1");
+        return
     }
     
-    else{
-
-        while (n != 1) {
+    while (n != 1) {
         
-            if (n % 2 == 0) {
-                n = n / 2;
-            }
-
-            else {
-                n = 3 * n + 1;
-            }
-
-            arr.push(n);
-            displayArray(arr)    
-
+        if (n % 2 == 0) {
+            n = n / 2;
         }
 
-        alert('La suite de Syracuse pour le nombre ' + valBase + ' est  : ' + arr);
-        alert('La durée de vol du nombre ' + valBase + ' est ' + arr.length + ' et son altitude maximale est ' + Math.max(...arr));
+        else {
+            n = 3 * n + 1;
+        }
 
+        arr.push(n);
+
+       
     }
+
+        displayArray(arr)    
+        
+        let max = 0;
+
+        arr.forEach(function(ouEstCharlie) {
+        if (ouEstCharlie > max) {
+        max = ouEstCharlie;
+        }
+        });
+
+        alert('La suite de Syracuse pour le nombre ' + valBase + ' est  :\n ' + arr + '\n\nLa durée de vol du nombre ' + valBase + ' est ' + arr.length + ' et son altitude maximale est ' + max);
+
+        // Math.max(...arr);
 
 }
 

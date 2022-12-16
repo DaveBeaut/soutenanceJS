@@ -87,7 +87,9 @@
 
 <script type="text/javascript">
 
-//Tant que le nombre n'est pas égal à 1 : SI le nombre est pair, l'additionner à lui-même et le diviser par 2. SINON (s'il est impair) le multiplier par 3 et lui ajouter 1. Pousser chaque résultat dans un tableau et afficher le résultat de ce dernier quand le dernier nombre devient égal à 1.
+/* Tant que le nombre n'est pas égal à 1 : SI le nombre est pair, l'additionner à lui-même et le diviser par 2.
+ * SINON (s'il est impair) le multiplier par 3 et lui ajouter 1. Pousser chaque résultat dans un tableau 
+ * et afficher le *résultat de ce dernier quand le dernier nombre devient égal à 1. */
 
 function computeSequence() {
     let arr = [];
@@ -111,11 +113,11 @@ function computeSequence() {
 
         arr.push(n);
 
-       
     }
 
         displayArray(arr)    
         
+        //forEach pour définir la valeur max du tableau pour remplacer Math.max(...arr)
         let max = 0;
 
         arr.forEach(function(ouEstCharlie) {
